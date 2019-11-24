@@ -22,3 +22,4 @@ Your class should have the following methods:
 
 .add_data() - which can take in  a list of values and extend the .data attribute
 .remove_data() accept a list of numbers and remove any of the numbers in that list from your object data
+
