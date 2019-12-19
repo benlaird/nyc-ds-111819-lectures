@@ -100,6 +100,7 @@ GROUP BY
   2
 ORDER BY
   cnt_rej DESC
+LIMIT 1
 ;
 
 
@@ -189,20 +190,10 @@ ORDER BY
 -- IN operator with subquery
 --  
 
-SELECT
-    order_id,
-    order_date,
-    customer_id
-FROM
-    sales.orders
-WHERE
-    customer_id IN (
-        SELECT
-            customer_id
-        FROM
-            sales.customers
-        WHERE
-            city = 'New York'
+SELECT order_id, order_date, customer_id
+FROM sales.orders
+WHERE. customer_id IN (
+        SELECT customer_id FROM sales.customers WHERE city = 'New York'
     )
 ORDER BY
     order_date DESC
